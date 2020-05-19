@@ -8,6 +8,7 @@ interface IconProps {
     | "EvilIcons"
     | "Entypo"
     | "FontAwesome"
+    | "FontAwesome5"
     | "Foundation"
     | "Ionicons"
     | "MaterialCommunityIcons"
@@ -119,6 +120,19 @@ const Icon = (props: IconProps): JSX.Element => {
       );
     }
 
+    case "FontAwesome5": {
+      const FontAwesome5 = require("react-native-vector-icons/FontAwesome5")
+        .default;
+      return (
+        <FontAwesome5
+          name={name}
+          size={size}
+          style={style}
+          color={color}
+          onPress={onPress}
+        />
+      );
+    }
     case "Foundation": {
       const Foundation = require("react-native-vector-icons/Foundation")
         .default;
@@ -205,7 +219,7 @@ Icon.defaultProps = {
   size: 20,
   style: {},
   onPress: null,
-  color: "#757575"
+  color: "#757575",
 };
 
 export default Icon;
