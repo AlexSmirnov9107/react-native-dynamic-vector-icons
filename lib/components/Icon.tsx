@@ -39,6 +39,19 @@ const Icon = (props: IconProps): JSX.Element => {
       );
     }
 
+    case "Feather": {
+      const Feather = require("react-native-vector-icons/Feather").default;
+      return (
+        <Feather
+          name={name}
+          size={size}
+          style={style}
+          color={color}
+          onPress={onPress}
+        />
+      );
+    }
+
     case "Entypo": {
       const Entypo = require("react-native-vector-icons/Entypo").default;
       return (
