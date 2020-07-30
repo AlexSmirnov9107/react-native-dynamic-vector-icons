@@ -15,7 +15,8 @@ interface IconProps {
     | "Zocial"
     | "Octicons"
     | "SimpleLineIcons"
-    | "Fontisto";
+    | "Fontisto"
+    | "Feather";
   name: string;
   size?: number;
   color?: string;
