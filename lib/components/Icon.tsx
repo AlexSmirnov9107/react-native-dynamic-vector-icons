@@ -8,7 +8,6 @@ interface IconProps {
     | "EvilIcons"
     | "Entypo"
     | "FontAwesome"
-    | "FontAwesome5"
     | "Foundation"
     | "Ionicons"
     | "MaterialCommunityIcons"
@@ -16,21 +15,23 @@ interface IconProps {
     | "Octicons"
     | "SimpleLineIcons"
     | "Fontisto"
-    | "Feather";
+    | "Feather"
+    | "FontAwesome5";
   name: string;
   size?: number;
   color?: string;
   onPress?: Function;
-  style?: React.CSSProperties;
+  style?: React.CSSProperties | React.CSSProperties[];
 }
 
 const Icon = (props: IconProps): JSX.Element => {
   const { type, name, color, size, onPress, style } = props;
   switch (type) {
-    case "AntDesign": {
-      const AntDesign = require("react-native-vector-icons/AntDesign").default;
+    case "FontAwesome5": {
+      const FontAwesome5 = require("react-native-vector-icons/FontAwesome5")
+        .default;
       return (
-        <AntDesign
+        <FontAwesome5
           name={name}
           size={size}
           style={style}
@@ -39,11 +40,10 @@ const Icon = (props: IconProps): JSX.Element => {
         />
       );
     }
-
-    case "Feather": {
-      const Feather = require("react-native-vector-icons/Feather").default;
+    case "AntDesign": {
+      const AntDesign = require("react-native-vector-icons/AntDesign").default;
       return (
-        <Feather
+        <AntDesign
           name={name}
           size={size}
           style={style}
@@ -134,19 +134,6 @@ const Icon = (props: IconProps): JSX.Element => {
       );
     }
 
-    case "FontAwesome5": {
-      const FontAwesome5 = require("react-native-vector-icons/FontAwesome5")
-        .default;
-      return (
-        <FontAwesome5
-          name={name}
-          size={size}
-          style={style}
-          color={color}
-          onPress={onPress}
-        />
-      );
-    }
     case "Foundation": {
       const Foundation = require("react-native-vector-icons/Foundation")
         .default;
@@ -204,6 +191,18 @@ const Icon = (props: IconProps): JSX.Element => {
       const Fontisto = require("react-native-vector-icons/Fontisto").default;
       return (
         <Fontisto
+          name={name}
+          size={size}
+          style={style}
+          color={color}
+          onPress={onPress}
+        />
+      );
+    }
+    case "Feather": {
+      const Feather = require("react-native-vector-icons/Feather").default;
+      return (
+        <Feather
           name={name}
           size={size}
           style={style}
