@@ -1,8 +1,8 @@
 import React from "react";
+import { ViewStyle } from "react-native";
 
 interface IconProps {
   type:
-    | string
     | "AntDesign"
     | "MaterialIcons"
     | "EvilIcons"
@@ -21,10 +21,10 @@ interface IconProps {
   size?: number;
   color?: string;
   onPress?: Function;
-  style?: React.CSSProperties | React.CSSProperties[];
+  style?: ViewStyle | ViewStyle[];
 }
 
-const Icon = (props: IconProps): JSX.Element => {
+const Icon = (props: IconProps): React.ReactNode => {
   const { type, name, color, size, onPress, style } = props;
   switch (type) {
     case "FontAwesome5": {
