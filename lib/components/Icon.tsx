@@ -24,7 +24,7 @@ interface IconProps {
   style?: ViewStyle | ViewStyle[];
 }
 
-const Icon = (props: IconProps): React.ReactNode => {
+const Icon = (props: IconProps): JSX.Element => {
   const { type, name, color, size, onPress, style } = props;
   switch (type) {
     case "FontAwesome5": {
