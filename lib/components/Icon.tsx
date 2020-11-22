@@ -1,22 +1,24 @@
 import React from "react";
 import { ViewStyle } from "react-native";
 
+export type IconTypes =
+  | "AntDesign"
+  | "MaterialIcons"
+  | "EvilIcons"
+  | "Entypo"
+  | "FontAwesome"
+  | "Foundation"
+  | "Ionicons"
+  | "MaterialCommunityIcons"
+  | "Zocial"
+  | "Octicons"
+  | "SimpleLineIcons"
+  | "Fontisto"
+  | "Feather"
+  | "FontAwesome5";
+
 interface IconProps {
-  type:
-    | "AntDesign"
-    | "MaterialIcons"
-    | "EvilIcons"
-    | "Entypo"
-    | "FontAwesome"
-    | "Foundation"
-    | "Ionicons"
-    | "MaterialCommunityIcons"
-    | "Zocial"
-    | "Octicons"
-    | "SimpleLineIcons"
-    | "Fontisto"
-    | "Feather"
-    | "FontAwesome5";
+  type: IconTypes;
   name: string;
   size?: number;
   color?: string;
